@@ -13,7 +13,6 @@ def process_table(BASE_DIR, conn, table_name):
 def main():
     BASE_DIR = os.environ.get('BASE_DIR')
     table_names = sys.argv[1].split(',')
-
     configs = dict(os.environ.items())
     conn = f'postgresql://{configs["DB_USER"]}:{configs["DB_PASS"]}@{configs["DB_HOST"]}:{configs["DB_PORT"]}/{configs["DB_NAME"]}'
     for table_name in table_names:
